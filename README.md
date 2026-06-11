@@ -7,37 +7,37 @@ A modern React Native e-commerce application built with Expo, Redux Toolkit, and
 ### Login Screen
 
 <p align="center">
-  <img src="./screenshots/login.png" width="250" />
+  <img src="./assets/screens/login-screen.png" width="250" />
 </p>
 
 ### Products Screen
 
 <p align="center">
-  <img src="./screenshots/products.png" width="250" />
+  <img src="./assets/screens/products-screen.png" width="250" />
 </p>
 
 ### Sort Bottom Sheet
 
 <p align="center">
-  <img src="./screenshots/sort.png" width="250" />
+  <img src="./assets//screens/sort-by-screen.png" width="250" />
 </p>
 
 ### Filter Bottom Sheet
 
 <p align="center">
-  <img src="./screenshots/filter.png" width="250" />
+  <img src="./assets/screens/filter-screen.png" width="250" />
 </p>
 
 ### Shopping Bag
 
 <p align="center">
-  <img src="./screenshots/bag.png" width="250" />
+  <img src="./assets/screens/bag-screen.png" width="250" />
 </p>
 
 ### Empty Bag State
 
 <p align="center">
-  <img src="./screenshots/empty-bag.png" width="250" />
+  <img src="./assets/screens/empty-bag.png" width="250" />
 </p>
 
 ---
