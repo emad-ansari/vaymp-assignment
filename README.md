@@ -81,35 +81,18 @@ https://fakestoreapi.com/products
 
 ---
 
-## 📂 Project Structure
-
-```text
-app/
-├── (tabs)/
-├── login/
-├── product-details/
-├── bag/
-├── components/
-├── store/
-├── services/
-├── hooks/
-└── utils/
-```
-
----
-
 ## ⚙️ Installation
 
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone git@github.com:emad-ansari/vaymp-assignment.git
 ```
 
 ### 2. Navigate to project folder
 
 ```bash
-cd vaymp
+cd vaymp-assignment
 ```
 
 ### 3. Install dependencies
