@@ -5,7 +5,7 @@ A modern React Native e-commerce application built with Expo, Redux Toolkit, and
 
 | Login Screen | Products Screen |
 |--------------|----------------|
-| <img src="./assets/screens/login-screen.png" width="250"> | <img src="./assets/screens/products-screen.png" width="250"> |
+| <img src="./assets/screens/login-screen.png" width="250"> | <img src="./assets/screens/product-screen.png" width="250"> |
 
 | Sort Bottom Sheet | Filter Bottom Sheet |
 |-------------------|---------------------|
@@ -13,7 +13,7 @@ A modern React Native e-commerce application built with Expo, Redux Toolkit, and
 
 | Shopping Bag | Empty Bag State |
 |-------------|----------------|
-| <img src="./assets/screens/bag-screen.png" width="250"> | <img src="./assets/screens/empty-bag.png" width="250"> |
+| <img src="./assets/screens/bag-screen.png" width="250"> | <img src="./assets/screens/empty-bag-screen.png" width="250"> |
 ---
 
 ## 🚀 Features
