@@ -90,7 +90,7 @@ export default function LoginScreen() {
     setTimeout(() => {
       dispatch(loginSuccess({ email: DUMMY_EMAIL, name: DUMMY_NAME }));
       setIsLoading(false);
-      router.replace('/');
+      router.replace('/product');
     }, 1200);
   };
 
