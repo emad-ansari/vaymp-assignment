@@ -1,45 +1,19 @@
 # 🛍️ VAYMP E-Commerce App
 
 A modern React Native e-commerce application built with Expo, Redux Toolkit, and NativeWind. The application allows users to browse products, sort and filter products, manage a shopping bag, and persist cart data across app restarts.
-
 ## 📱 Screenshots
 
-### Login Screen
+| Login Screen | Products Screen |
+|--------------|----------------|
+| <img src="./assets/screens/login-screen.png" width="250"> | <img src="./assets/screens/products-screen.png" width="250"> |
 
-<p align="center">
-  <img src="./assets/screens/login-screen.png" width="250" />
-</p>
+| Sort Bottom Sheet | Filter Bottom Sheet |
+|-------------------|---------------------|
+| <img src="./assets/screens/sort-by-screen.png" width="250"> | <img src="./assets/screens/filter-screen.png" width="250"> |
 
-### Products Screen
-
-<p align="center">
-  <img src="./assets/screens/products-screen.png" width="250" />
-</p>
-
-### Sort Bottom Sheet
-
-<p align="center">
-  <img src="./assets//screens/sort-by-screen.png" width="250" />
-</p>
-
-### Filter Bottom Sheet
-
-<p align="center">
-  <img src="./assets/screens/filter-screen.png" width="250" />
-</p>
-
-### Shopping Bag
-
-<p align="center">
-  <img src="./assets/screens/bag-screen.png" width="250" />
-</p>
-
-### Empty Bag State
-
-<p align="center">
-  <img src="./assets/screens/empty-bag.png" width="250" />
-</p>
-
+| Shopping Bag | Empty Bag State |
+|-------------|----------------|
+| <img src="./assets/screens/bag-screen.png" width="250"> | <img src="./assets/screens/empty-bag.png" width="250"> |
 ---
 
 ## 🚀 Features
