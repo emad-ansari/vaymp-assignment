@@ -39,7 +39,7 @@ export default function BagScreen() {
   // Calculate pricing summaries for selected items
   const selectedItems = cartItemsWithDetails.filter(item => item.selected);
   const totalAmount = selectedItems.reduce((sum, item) => sum + (item.product?.price || 0) * item.quantity, 0);
-  const totalOriginalAmount = selectedItems.reduce((sum, item) => sum + (item.product?.price * 1.5 || 0) * item.quantity, 0);
+  const totalOriginalAmount = selectedItems.reduce((sum, item) => sum + (item?.product ? item.product.price * 1.5 : 0) * item.quantity, 0);
   
   // Check if all items are selected
   const allSelected = cartItems.length > 0 && cartItems.every(item => item.selected);

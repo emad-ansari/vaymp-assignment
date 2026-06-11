@@ -1,30 +1,29 @@
-import React, { useState, useRef } from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import { useRouter } from 'expo-router';
+import { useRef, useState } from 'react';
 import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
+  ActivityIndicator,
+  Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
-  Pressable,
-  ActivityIndicator,
-  Image,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
 import Animated, {
-  useSharedValue,
-  useAnimatedStyle,
-  withTiming,
-  withSequence,
   Easing,
   FadeInDown,
-  FadeInUp,
+  useAnimatedStyle,
+  useSharedValue,
+  withSequence,
+  withTiming
 } from 'react-native-reanimated';
-import { useRouter } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useDispatch } from 'react-redux';
 import { loginSuccess } from '../store/authSlice';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 
 
 const DUMMY_EMAIL = 'user@vaymp.com';
@@ -64,7 +63,7 @@ export default function LoginScreen() {
   const handleLogin = () => {
     setError('');
 
- 
+
     if (!email.trim()) {
       setError('Please enter your email address.');
       triggerShake();
@@ -86,7 +85,7 @@ export default function LoginScreen() {
       return;
     }
 
-   
+
     setIsLoading(true);
     setTimeout(() => {
       dispatch(loginSuccess({ email: DUMMY_EMAIL, name: DUMMY_NAME }));
@@ -106,6 +105,7 @@ export default function LoginScreen() {
       className="flex-1"
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
+      <StatusBar style="dark" />
       <ScrollView
         className="flex-1 bg-white"
         contentContainerStyle={{
@@ -163,9 +163,8 @@ export default function LoginScreen() {
               Email Address
             </Text>
             <View
-              className={`flex-row items-center border rounded-2xl px-4 h-14 bg-slate-50 ${
-                error && !email ? 'border-red-300 bg-red-50/30' : 'border-slate-200'
-              }`}
+              className={`flex-row items-center border rounded-2xl px-4 h-14 bg-slate-50 ${error && !email ? 'border-red-300 bg-red-50/30' : 'border-slate-200'
+                }`}
             >
               <Ionicons name="mail-outline" size={18} color="#94a3b8" />
               <TextInput
@@ -197,9 +196,8 @@ export default function LoginScreen() {
               Password
             </Text>
             <View
-              className={`flex-row items-center border rounded-2xl px-4 h-14 bg-slate-50 ${
-                error && !password ? 'border-red-300 bg-red-50/30' : 'border-slate-200'
-              }`}
+              className={`flex-row items-center border rounded-2xl px-4 h-14 bg-slate-50 ${error && !password ? 'border-red-300 bg-red-50/30' : 'border-slate-200'
+                }`}
             >
               <Ionicons name="lock-closed-outline" size={18} color="#94a3b8" />
               <TextInput

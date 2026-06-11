@@ -69,6 +69,12 @@ const cartSlice = createSlice({
     clearCart: (state) => {
       state.cartItems = [];
     },
+    setCartState: (state, action: PayloadAction<{ favorites?: number[]; cartItems?: CartItem[] }>) => {
+      if (action.payload) {
+        state.favorites = action.payload.favorites || [];
+        state.cartItems = action.payload.cartItems || [];
+      }
+    },
   },
 });
 
@@ -79,7 +85,8 @@ export const {
   deleteFromCart,
   toggleItemSelect,
   toggleAllItemsSelect,
-  clearCart
+  clearCart,
+  setCartState
 } = cartSlice.actions;
 
 // Helper to select dynamic badge count (sum of all quantities in cart)

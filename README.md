@@ -1,50 +1,215 @@
-# Welcome to your Expo app 👋
+# 🛍️ VAYMP E-Commerce App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern React Native e-commerce application built with Expo, Redux Toolkit, and NativeWind. The application allows users to browse products, sort and filter products, manage a shopping bag, and persist cart data across app restarts.
 
-## Get started
+## 📱 Screenshots
 
-1. Install dependencies
+### Login Screen
 
-   ```bash
-   npm install
-   ```
+<p align="center">
+  <img src="./screenshots/login.png" width="250" />
+</p>
 
-2. Start the app
+### Products Screen
 
-   ```bash
-   npx expo start
-   ```
+<p align="center">
+  <img src="./screenshots/products.png" width="250" />
+</p>
 
-In the output, you'll find options to open the app in a
+### Sort Bottom Sheet
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+<p align="center">
+  <img src="./screenshots/sort.png" width="250" />
+</p>
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Filter Bottom Sheet
 
-## Get a fresh project
+<p align="center">
+  <img src="./screenshots/filter.png" width="250" />
+</p>
 
-When you're ready, run:
+### Shopping Bag
 
-```bash
-npm run reset-project
+<p align="center">
+  <img src="./screenshots/bag.png" width="250" />
+</p>
+
+### Empty Bag State
+
+<p align="center">
+  <img src="./screenshots/empty-bag.png" width="250" />
+</p>
+
+---
+
+## 🚀 Features
+
+### Authentication
+
+* User Login Screen
+* Form Validation
+* Navigation Guard
+
+### Products
+
+* Fetch products from Fake Store API
+* Product Listing Screen
+* Product Images, Titles, Descriptions, and Prices
+* Responsive Product Cards
+
+### Sorting
+
+* Price: Low to High
+* Price: High to Low
+* Rating: High to Low
+
+### Filtering
+
+* Category Filter
+* Apply Filters
+* Clear Filters
+
+### Shopping Bag
+
+* Add Products to Bag
+* Remove Products from Bag
+* Increase Quantity
+* Decrease Quantity
+* Grand Total Calculation
+* Total Item Count
+
+### Persistence
+
+* Shopping Bag persists across app restarts
+* Implemented using AsyncStorage + Redux Toolkit
+
+---
+
+## 🛠️ Tech Stack
+
+* React Native
+* Expo
+* Expo Router
+* Redux Toolkit
+* AsyncStorage
+* NativeWind
+* TypeScript
+* React Hooks
+* Fake Store API
+
+---
+
+## 📦 API Used
+
+Products are fetched from:
+
+https://fakestoreapi.com/products
+
+---
+
+## 📂 Project Structure
+
+```text
+app/
+├── (tabs)/
+├── login/
+├── product-details/
+├── bag/
+├── components/
+├── store/
+├── services/
+├── hooks/
+└── utils/
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
+## ⚙️ Installation
 
-To learn more about developing your project with Expo, look at the following resources:
+### 1. Clone the repository
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+git clone <repository-url>
+```
 
-## Join the community
+### 2. Navigate to project folder
 
-Join our community of developers creating universal apps.
+```bash
+cd vaymp
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start development server
+
+```bash
+npx expo start
+```
+
+---
+
+## ▶️ Run on Android
+
+```bash
+npx expo run:android
+```
+
+or
+
+```bash
+npx expo start --android
+```
+
+---
+
+## ▶️ Run on iOS
+
+```bash
+npx expo run:ios
+```
+
+---
+
+## 🧪 Assignment Requirements Covered
+
+| Requirement             | Status |
+| ----------------------- | ------ |
+| Product Listing         | ✅      |
+| API Integration         | ✅      |
+| Product Sorting         | ✅      |
+| Product Filtering       | ✅      |
+| Add To Bag              | ✅      |
+| Redux Toolkit           | ✅      |
+| Quantity Management     | ✅      |
+| Remove Product          | ✅      |
+| Empty Bag State         | ✅      |
+| Grand Total Calculation | ✅      |
+| Data Persistence        | ✅      |
+| React Hooks             | ✅      |
+| Functional Components   | ✅      |
+
+---
+
+## 🎯 Additional Improvements
+
+Beyond the assignment requirements, the following enhancements were implemented:
+
+* User Login Screen
+* Reusable UI Components
+* Clean Architecture
+* TypeScript Support
+* Persistent State Management
+* Better Folder Structure
+* Responsive UI Design
+
+---
+
+## 👨‍💻 Author
+
+Mohammad Emad
+
+GitHub: https://github.com/your-github-username
