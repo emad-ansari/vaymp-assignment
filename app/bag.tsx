@@ -12,7 +12,7 @@ import {
   toggleItemSelect, 
   toggleAllItemsSelect 
 } from '../store/cartSlice';
-import { LOCAL_IMAGES } from '../constants/images';
+
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export default function BagScreen() {
@@ -39,7 +39,7 @@ export default function BagScreen() {
   // Calculate pricing summaries for selected items
   const selectedItems = cartItemsWithDetails.filter(item => item.selected);
   const totalAmount = selectedItems.reduce((sum, item) => sum + (item.product?.price || 0) * item.quantity, 0);
-  const totalOriginalAmount = selectedItems.reduce((sum, item) => sum + (item.product?.originalPrice || 0) * item.quantity, 0);
+  const totalOriginalAmount = selectedItems.reduce((sum, item) => sum + (item.product?.price * 1.5 || 0) * item.quantity, 0);
   
   // Check if all items are selected
   const allSelected = cartItems.length > 0 && cartItems.every(item => item.selected);
@@ -155,7 +155,7 @@ export default function BagScreen() {
 
                     {/* Product image (local static require mapping) */}
                     <Image
-                      source={LOCAL_IMAGES[product.imageIndex]}
+                      source={product.image}
                       style={{ width: 85, height: 105 }}
                       className="rounded-xl bg-slate-50 border border-slate-100"
                       contentFit="cover"
@@ -164,13 +164,13 @@ export default function BagScreen() {
                     {/* Product metadata content right panel */}
                     <View className="flex-1 ml-4 flex-col">
                       <Text className="text-sm font-bold text-slate-800 leading-5" numberOfLines={1}>
-                        {product.brand}
+                        {product.title}
                       </Text>
                       <Text className="text-xs text-slate-400 font-medium leading-4" numberOfLines={1}>
-                        Product description line 1
+                        {product.description}
                       </Text>
                       <Text className="text-xs text-slate-400 font-medium leading-4 mb-2" numberOfLines={1}>
-                        Product description line 2
+                        {product.category}
                       </Text>
 
                       <View className="flex-row items-center justify-between">
@@ -178,7 +178,7 @@ export default function BagScreen() {
                         <View className="flex-col">
                           <View className="flex-row items-center space-x-1.5">
                             <Text className="text-sm font-extrabold text-slate-900">₹{product.price}</Text>
-                            <Text className="text-xs text-slate-400 line-through">₹{product.originalPrice}</Text>
+                            <Text className="text-xs text-slate-400 line-through">₹{product.price * 1.5}</Text>
                           </View>
                           
                           {/* TRY N BUY tag */}

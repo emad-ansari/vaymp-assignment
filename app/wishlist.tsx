@@ -6,7 +6,6 @@ import { useRouter } from 'expo-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
 import { toggleFavorite, addToCart, selectCartItemsCount } from '../store/cartSlice';
-import { LOCAL_IMAGES } from '../constants/images';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Animated, { FadeInDown, Easing } from 'react-native-reanimated';
 
@@ -83,12 +82,13 @@ export default function WishlistScreen() {
               entering={FadeInDown.delay(index * 40).duration(400).easing(Easing.out(Easing.quad))}
               className="flex-1 m-1.5 bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm flex-col justify-between"
             >
-              {/* Product Image Wrapper */}
-              <View className="relative w-full aspect-[3/4] bg-slate-50">
+              {/* Product Image */}
+              <View className="relative w-full aspect-square bg-slate-50">
                 <Image
-                  source={LOCAL_IMAGES[item.imageIndex]}
+                  source={{ uri: item.image }}
                   style={{ width: '100%', height: '100%' }}
-                  contentFit="cover"
+                  contentFit="contain"
+                  transition={300}
                 />
                 
                 {/* Remove from wishlist button */}
@@ -101,20 +101,24 @@ export default function WishlistScreen() {
                 </TouchableOpacity>
               </View>
 
-              {/* Product Metadata & Quick Actions */}
               <View className="p-3 flex-col">
-                <Text className="text-sm font-bold text-slate-800 leading-4" numberOfLines={1}>
-                  {item.brand}
-                </Text>
-                
-                <Text className="text-xs text-slate-400 font-medium leading-4 mt-0.5 mb-2" numberOfLines={1}>
+                {/* Category pill */}
+                <View className="mb-1 self-start bg-slate-100 rounded-full px-2 py-0.5">
+                  <Text className="text-[9px] font-bold text-slate-500 uppercase tracking-wide">
+                    {item.category.split(' ').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+                  </Text>
+                </View>
+
+                <Text className="text-xs font-semibold text-slate-800 leading-4 mb-1" numberOfLines={2}>
                   {item.title}
                 </Text>
 
                 <View className="flex-row items-center space-x-1.5 mb-3">
-                  <Text className="text-sm font-extrabold text-slate-900">₹{item.price}</Text>
-                  <Text className="text-[10px] text-slate-400 line-through">₹{item.originalPrice}</Text>
-                  <Text className="text-[10px] text-brand-discount font-bold">{item.discountPercent}% OFF</Text>
+                  <Text className="text-sm font-extrabold text-slate-900">${item.price.toFixed(2)}</Text>
+                  <View className="flex-row items-center ml-1">
+                    <Ionicons name="star" size={10} color="#f59e0b" />
+                    <Text className="text-[10px] text-slate-400 font-medium ml-0.5">{item.rating.rate}</Text>
+                  </View>
                 </View>
 
                 {/* Add to Bag Quick Button */}

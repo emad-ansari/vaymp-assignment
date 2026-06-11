@@ -16,7 +16,6 @@ const SORT_OPTIONS = [
   { id: 'newest', label: 'Newest arrivals' },
   { id: 'price_asc', label: 'Price - low to high' },
   { id: 'price_desc', label: 'Price - high to low' },
-  { id: 'offers', label: 'Offers and dicounts' },
   { id: 'popularity', label: 'Best sellers' },
 ] as const;
 

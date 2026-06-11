@@ -26,11 +26,11 @@ import { useDispatch } from 'react-redux';
 import { loginSuccess } from '../store/authSlice';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-// ─── Dummy credentials ─────────────────────────────────────────────────────────
+
 const DUMMY_EMAIL = 'user@vaymp.com';
 const DUMMY_PASSWORD = 'vaymp@123';
 const DUMMY_NAME = 'Emad Ansari';
-// ───────────────────────────────────────────────────────────────────────────────
+
 
 export default function LoginScreen() {
   const router = useRouter();
@@ -64,7 +64,7 @@ export default function LoginScreen() {
   const handleLogin = () => {
     setError('');
 
-    // Basic validation
+ 
     if (!email.trim()) {
       setError('Please enter your email address.');
       triggerShake();
@@ -76,7 +76,7 @@ export default function LoginScreen() {
       return;
     }
 
-    // Credential check
+
     if (
       email.trim().toLowerCase() !== DUMMY_EMAIL ||
       password !== DUMMY_PASSWORD
@@ -86,7 +86,7 @@ export default function LoginScreen() {
       return;
     }
 
-    // Animate loading state then navigate
+   
     setIsLoading(true);
     setTimeout(() => {
       dispatch(loginSuccess({ email: DUMMY_EMAIL, name: DUMMY_NAME }));

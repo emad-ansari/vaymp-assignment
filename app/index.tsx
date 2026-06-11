@@ -58,30 +58,26 @@ export default function Index() {
 
   const getResultsHeaderLabel = () => {
     const totalCount = filteredProducts.length;
-    let categoryText = "Men's & Women's";
-    
-    if (appliedFilters.categories.length === 1) {
-      const selectedCat = appliedFilters.categories[0];
-      categoryText = selectedCat === "men's clothing" ? "Men's" : "Women's";
-    }
-    
+
     if (searchQuery.trim().length > 0) {
       return `Showing ${totalCount} ${totalCount === 1 ? 'result' : 'results'} for "${searchQuery}"`;
     }
-    
-    return `Showing ${totalCount} results for ${categoryText} T-shirts`;
+
+    if (appliedFilters.categories.length > 0) {
+      const cats = appliedFilters.categories
+        .map((c) => c.split(' ').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '))
+        .join(', ');
+      return `Showing ${totalCount} ${totalCount === 1 ? 'result' : 'results'} in ${cats}`;
+    }
+
+    return `Showing all ${totalCount} products`;
   };
 
-  // Compute number of active filters to show dot badge
-  const activeFiltersCount = 
-    appliedFilters.categories.length + 
-    appliedFilters.genders.length +
-    appliedFilters.brands.length +
-    appliedFilters.colors.length +
-    (appliedFilters.minPrice > 0 || appliedFilters.maxPrice < 10000 ? 1 : 0) + 
-    (appliedFilters.minRating > 0 ? 1 : 0) +
-    (appliedFilters.deliveryDays !== null ? 1 : 0) +
-    (appliedFilters.discountMin !== null ? 1 : 0);
+  // Compute number of active filters for the badge
+  const activeFiltersCount =
+    appliedFilters.categories.length +
+    (appliedFilters.minPrice > 0 || appliedFilters.maxPrice < 1000 ? 1 : 0) +
+    (appliedFilters.minRating > 0 ? 1 : 0);
 
   return (
     <View className="flex-1 bg-white relative">
